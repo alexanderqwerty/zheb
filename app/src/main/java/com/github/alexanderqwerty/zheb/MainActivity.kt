@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Switch
+import androidx.appcompat.widget.SwitchCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val a: AudioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
         findViewById<ImageButton>(R.id.bt_sayZheb).setOnClickListener {
-            if (findViewById<Switch>(R.id.s_alwaysLoud).isChecked)
+            if (findViewById<SwitchCompat>(R.id.s_alwaysLoud).isChecked)
                 a.setStreamVolume(
                     AudioManager.STREAM_MUSIC,
                     a.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
